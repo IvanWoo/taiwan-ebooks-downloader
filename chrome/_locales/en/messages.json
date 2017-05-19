@@ -1,0 +1,11 @@
+{
+    "appName": {
+        "message": "Taiwan eBook Downloader"
+    },
+    "description": {
+        "message": "Assistant to download ebooks from National Central Library"
+    },
+    "openContextMenuTitle": {
+        "message": "Download the pdf"
+    }
+}

@@ -1,0 +1,7 @@
+/*seperate the view and download buttons*/
+.ui.labeled.icon.button,
+.ui.labeled.icon.buttons,
+.ui.blue.button,
+.ui.blue.buttons .button {
+    margin: 5px;
+}

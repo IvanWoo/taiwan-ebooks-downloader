@@ -1,0 +1,11 @@
+{
+    "appName": {
+        "message": "台湾电子书下载助手"
+    },
+    "description": {
+        "message": "从台湾华文电子书库中下载电子文档"
+    },
+    "openContextMenuTitle": {
+        "message": "开始下载 pdf"
+    }
+}
