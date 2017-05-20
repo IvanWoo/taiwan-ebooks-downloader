@@ -14,4 +14,4 @@ var download_button = "<a target='_blank' class='ui cetered blue button focus_bo
 var download_button_on_reader_page = "<a target='_blank' class='ui labeled icon button focus_border' href='" + pdf_url + "'>" + label + "<i class='right chevron icon'></i></a>"
 $("div.ui.medium.image").append(download_button);
 $("body > main > main > div > div:nth-child(1) > div.ui.three.wide.computer.three.wide.tablet.sixteen.wide.mobile.column").append(download_button_on_reader_page)
-console.log("Taiwan eBooks Downloader load sucessfully!")
+console.log("Taiwan eBooks Downloader load successfully!")
