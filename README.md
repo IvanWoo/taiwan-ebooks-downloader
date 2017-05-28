@@ -7,3 +7,7 @@ A Chrome extension for downloading books from [Taiwan eBooks Database](http://ta
 ## Install
 * Through the Chrome web store: https://chrome.google.com/webstore/detail/taiwan-ebooks-downloader/njahmpkifjjkgelmjpeaflclneafiblp
 * Chrome : Click **Settings** -> **Extensions** -> Check **Developer mode**-> **Load unpacked extension**, navigate to the `chrome` folder, click OK.
+
+## Acknowledgments
+* Inspired by [huangziwei](https://github.com/huangziwei/tweb).
+
