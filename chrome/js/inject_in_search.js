@@ -11,8 +11,10 @@ $("div.extra > a.ui.right.floated").each(function (index) {
     } else {
         var label = "下載電子書";
     }
+    
+    // add download button
     var download_button_in_search = "<a target='_blank' class='ui right floated' href='" + pdf_url + "'>" + label + "<i class='right chevron icon'></i></a>";
     $("div.extra:eq(" + index + ")").append(download_button_in_search);
-    console.log(index + ": " + $(this).attr('href'));
+    // console.log(index + ": " + $(this).attr('href'));
     index += 1;
 });
