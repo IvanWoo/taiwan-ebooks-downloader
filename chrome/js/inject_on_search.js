@@ -21,7 +21,7 @@ $("div.extra > a.ui.right.floated").each(function (index) {
     download_btn.classList.add('ui', 'right', 'floated');
     download_btn.target = "_blank";
     download_btn.href = pdf_url;
-    download_btn.innerHTML = label;
+    download_btn.textContent = label;
     download_btn.appendChild(download_icon);
 
     $("div.extra:eq(" + index + ")").append(download_btn);

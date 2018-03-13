@@ -18,7 +18,7 @@ var download_btn = document.createElement("A");
 download_btn.classList.add('ui', 'cetered', 'blue', 'button', 'focus_border');
 download_btn.target = "_blank";
 download_btn.href = pdf_url;
-download_btn.innerHTML = label;
+download_btn.textContent = label;
 download_btn.appendChild(download_icon);
 
 $("div.ui.medium.image").append(download_btn);
