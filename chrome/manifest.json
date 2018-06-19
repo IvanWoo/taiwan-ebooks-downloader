@@ -17,7 +17,6 @@
   "content_scripts": [
     {
       "js": [
-        "js/jquery-3.2.1.min.js",
         "js/inject_on_book.js"
       ],
       "css": [
