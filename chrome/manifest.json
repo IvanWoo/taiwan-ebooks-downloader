@@ -30,19 +30,6 @@
     {
       "js": [
         "js/jquery-3.2.1.min.js",
-        "js/inject_on_reader.js"
-      ],
-      "css": [
-        "css/main.css"
-      ],
-      "matches": [
-        "*://taiwanebook.ncl.edu.tw/*/book/*/reader"
-      ],
-      "run_at": "document_idle"
-    },
-    {
-      "js": [
-        "js/jquery-3.2.1.min.js",
         "js/inject_on_search.js"
       ],
       "matches": [
