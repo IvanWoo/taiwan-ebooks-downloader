@@ -1,30 +1,28 @@
-var index = 0;
+const get_label = language => {
+  if (language === "en") {
+    return "Download eBook";
+  } else {
+    return "下載電子書";
+  }
+};
 
-$("div.extra > a.ui.right.floated").each(function (index) {
-    var url = $(this).attr('href');
-    var id = url.split("/")[5];
-    var language = url.split("/")[3];
-    var pdf_url = 'http://taiwanebook.ncl.edu.tw/ebkFiles/' + id + '/' + id + '.PDF';
-    var label;
+let dl_array = document.querySelectorAll('div.extra > a.ui.right.floated');
+dl_array.forEach((value, index) => {
+    let url = value.href;
+    let id = url.split("/")[5];
+    let language = url.split("/")[3];
+    let pdf_url = 'http://taiwanebook.ncl.edu.tw/ebkFiles/' + id + '/' + id + '.PDF';
+    let label = get_label(language);
 
-    if (language == "en") {
-        label = "Download eBook";
-    } else {
-        label = "下載電子書";
-    }
-    
     // add download button
-    var download_icon = document.createElement("I");
+    let download_icon = document.createElement("I");
     download_icon.classList.add('right', 'chevron', 'icon');
 
-    var download_btn = document.createElement("A");
+    let download_btn = document.createElement("A");
     download_btn.classList.add('ui', 'right', 'floated');
     download_btn.target = "_blank";
     download_btn.href = pdf_url;
     download_btn.textContent = label;
     download_btn.appendChild(download_icon);
-
-    $("div.extra:eq(" + index + ")").append(download_btn);
-    // console.log(index + ": " + $(this).attr('href'));
-    index += 1;
+    value.parentNode.appendChild(download_btn);
 });
