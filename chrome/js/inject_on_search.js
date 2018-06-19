@@ -1,9 +1,9 @@
 const get_label = language => {
-  if (language === "en") {
-    return "Download eBook";
-  } else {
-    return "下載電子書";
-  }
+    if (language === "en") {
+        return "Download eBook";
+    } else {
+        return "下載電子書";
+    }
 };
 
 let dl_array = document.querySelectorAll('div.extra > a.ui.right.floated');
