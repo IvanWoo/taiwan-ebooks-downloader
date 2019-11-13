@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Taiwan eBooks Downloader",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "default_locale": "en",
   "description": "Download eBooks directly from Taiwan eBook Database (台湾华文电子书库)",
   "icons": {
@@ -14,32 +14,18 @@
   "browser_action": {
     "default_title": "Taiwan eBooks Downloader"
   },
-  "content_scripts": [
-    {
-      "js": [
-        "js/inject_on_book.js"
-      ],
-      "css": [
-        "css/main.css"
-      ],
-      "matches": [
-        "*://taiwanebook.ncl.edu.tw/*/book/*"
-      ],
-      "run_at": "document_idle"
-    },
-    {
-      "js": [
-        "js/inject_on_search.js"
-      ],
-      "matches": [
-        "*://taiwanebook.ncl.edu.tw/*/category/*",
-        "*://taiwanebook.ncl.edu.tw/*/collection/*",
-        "*://taiwanebook.ncl.edu.tw/*/time/*",
-        "*://taiwanebook.ncl.edu.tw/*/search/*"
-      ],
-      "run_at": "document_idle"
-    }
-  ],
+  "content_scripts": [{
+    "js": [
+      "js/inject.js"
+    ],
+    "css": [
+      "css/main.css"
+    ],
+    "matches": [
+      "*://taiwanebook.ncl.edu.tw/*"
+    ],
+    "run_at": "document_idle"
+  }],
   "background": {
     "scripts": [
       "background.js"
