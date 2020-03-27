@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "Taiwan eBooks Downloader",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "default_locale": "en",
   "description": "Download eBooks directly from Taiwan eBook Database (台湾华文电子书库)",
   "icons": {
@@ -30,6 +30,11 @@
     "scripts": [
       "background.js"
     ],
-    "persistent": false
-  }
+    "persistent": true
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://taiwanebook.ncl.edu.tw/ebkFiles/*"
+  ]
 }
