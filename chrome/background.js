@@ -7,16 +7,22 @@ chrome.browserAction.onClicked.addListener((activeTab) => {
 // https://stackoverflow.com/a/59296870
 chrome.webRequest.onBeforeSendHeaders.addListener(
     (details) => {
-        const newHeader = {
-            name: "Referer",
-            value: "https://taiwanebook.ncl.edu.tw"
-        };
-        const requestHeaders = details.requestHeaders.concat(newHeader);
+        const newHeaders = [
+            {
+                name: "Referer",
+                value: "https://taiwanebook.ncl.edu.tw",
+            },
+            {
+                name: "credentials",
+                value: "include",
+            },
+        ];
+        const requestHeaders = details.requestHeaders.concat(newHeaders);
         return { requestHeaders };
     },
     // filters
     {
-        urls: ["https://taiwanebook.ncl.edu.tw/ebkFiles/*"]
+        urls: ["https://taiwanebook.ncl.edu.tw/ebkFiles/*"],
     },
     // extraInfoSpec
     ["blocking", "requestHeaders", "extraHeaders"]
