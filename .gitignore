@@ -1,2 +1,9 @@
 .vscode
+
+.cache
+.parcel-cache
+node_modules/
+
+.DS_Store
+
 chrome.zip

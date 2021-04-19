@@ -1,0 +1,21 @@
+{
+  "name": "taiwan-ebooks-downloader",
+  "description": "Chrome extension util to download pdfs from taiwanebook.ncl.edu.tw",
+  "version": "0.5.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/IvanWoo/taiwan-ebooks-downloader.git",
+  "author": "Yifan Wu <tyivanwu@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "clean": "rimraf .cache chrome/js",
+    "prep": "yarn clean && mkdir -p chrome/js",
+    "build": "yarn prep && parcel build src/inject.js -d chrome/js --no-source-maps --no-cache --detailed-report && bash build.sh",
+    "start": "yarn prep && parcel src/inject.js -d chrome/js"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ],
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
