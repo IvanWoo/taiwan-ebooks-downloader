@@ -9,18 +9,21 @@ const getDefaultPdfUrl = (url) => {
   return `http://taiwanebook.ncl.edu.tw/ebkFiles/${id}/${id}.PDF`;
 };
 
-export const getPdfUrls = async (url) => {
+export const getPdfHrefs = async (url) => {
   const readerUrl = url + "/reader";
   const htmlString = await getContent(readerUrl);
   const parser = new DOMParser();
   const readerPage = parser.parseFromString(htmlString, "text/html");
   const pdfAnchorTags = readerPage.querySelectorAll("a.pdfFile");
-  let pdfUrls = [...pdfAnchorTags]
-    .map((x) => x.href)
-    .map((x) => {
-      const url = new URL(x);
-      return url.origin + url.searchParams.get("file");
-    });
+  return [...pdfAnchorTags].map((x) => x.href.trim());
+};
+
+export const getPdfUrls = async (url) => {
+  const hrefs = await getPdfHrefs(url);
+  let pdfUrls = hrefs.map((x) => {
+    const url = new URL(x);
+    return url.origin + url.searchParams.get("file");
+  });
   if (pdfUrls.length === 0) {
     pdfUrls = [getDefaultPdfUrl(url)];
   }

@@ -1,15 +1,44 @@
 import fs from "fs";
 import path from "path";
 
-import { getPdfUrls, getLabel, getDownloadBtn } from "../utils";
+import { getPdfHrefs, getPdfUrls, getLabel, getDownloadBtn } from "../utils";
 
 beforeEach(() => {
   fetch.resetMocks();
 });
 
+const mockBookReaderHtml = (id) => {
+  const html = fs.readFileSync(
+    path.resolve(__dirname, `./mocks/${id}.html`),
+    "utf8"
+  );
+  fetch.mockResponseOnce(html);
+};
+
+describe("getPdfHrefs", () => {
+  const cases = [
+    [
+      "NCL-9910002285",
+      [
+        "/pdfjs_dual/web/viewer.html?file=/ebkFiles/NCL-9910002285/NCL-9910002285F01.PDF",
+        "/pdfjs_dual/web/viewer.html?file=/ebkFiles/NCL-9910002285/NCL-9910002285F02.PDF",
+      ],
+    ],
+    ["NTUL-9900013103", []],
+  ];
+
+  test.each(cases)("given %p, returns %p", async (id, expected) => {
+    mockBookReaderHtml(id);
+    const url = `https://taiwanebook.ncl.edu.tw/en/book/${id}`;
+    const results = await getPdfHrefs(url);
+    expect(fetch).toHaveBeenCalledTimes(1);
+    expect(results).toEqual(expected);
+  });
+});
+
 describe("getPdfUrls", () => {
   const cases = [
-    // FIXME: the below testing didn't work the way expected as in browser
+    // FIXME: the context difference between browser and test runners makes the multi parts fail
     // [
     //   "NCL-9910002285",
     //   [
@@ -26,17 +55,10 @@ describe("getPdfUrls", () => {
   ];
 
   test.each(cases)("given %p, returns %p", async (id, expected) => {
+    mockBookReaderHtml(id);
     const url = `https://taiwanebook.ncl.edu.tw/en/book/${id}`;
-    const html = fs.readFileSync(
-      path.resolve(__dirname, `./mocks/${id}.html`),
-      "utf8"
-    );
-    fetch.mockResponseOnce(
-      JSON.stringify({
-        data: html,
-      })
-    );
     const results = await getPdfUrls(url);
+    expect(fetch).toHaveBeenCalledTimes(1);
     expect(results).toEqual(expected);
   });
 });
