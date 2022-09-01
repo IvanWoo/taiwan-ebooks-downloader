@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getDownloadBtn matches the snapshot 1`] = `
+<a
+  href="https://taiwanebook.ncl.edu.tw/ebkFiles/NCL-9910002138/NCL-9910002138.PDF"
+  target="_blank"
+>
+  Download eBook NCL-9910002138.PDF
+</a>
+`;

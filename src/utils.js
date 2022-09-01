@@ -9,7 +9,7 @@ const getDefaultPdfUrl = (url) => {
   return `http://taiwanebook.ncl.edu.tw/ebkFiles/${id}/${id}.PDF`;
 };
 
-const getPdfUrls = async (url) => {
+export const getPdfUrls = async (url) => {
   const readerUrl = url + "/reader";
   const htmlString = await getContent(readerUrl);
   const parser = new DOMParser();
@@ -27,12 +27,12 @@ const getPdfUrls = async (url) => {
   return pdfUrls;
 };
 
-const getLabel = (url) => {
+export const getLabel = (url) => {
   const language = url.split("/")[3];
   return language === "en" ? "Download eBook" : "下載電子書";
 };
 
-const getDownloadBtn = (pdfUrl, label) => {
+export const getDownloadBtn = (pdfUrl, label) => {
   let downloadBtn = document.createElement("A");
   downloadBtn.target = "_blank";
   downloadBtn.href = pdfUrl;

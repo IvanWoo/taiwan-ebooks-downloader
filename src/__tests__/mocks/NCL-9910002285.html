@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh_tw">
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<meta http-equiv="X-UA-Compatible" content="IE=11" />
+<title> Taiwan eBook</title>
+<link rel="stylesheet" type="text/css" href="https://taiwanebook.ncl.edu.tw/semantic/dist/semantic.min.css">
+<link rel="stylesheet" type="text/css" href="https://taiwanebook.ncl.edu.tw/style/main.css">
+<script src="https://taiwanebook.ncl.edu.tw/js/jquery-1.11.3.min.js"></script>
+<script src="https://taiwanebook.ncl.edu.tw/js/jquery-ui-1.11.4/jquery-ui.min.js"></script>
+<script src="https://taiwanebook.ncl.edu.tw/semantic/dist/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://taiwanebook.ncl.edu.tw/style/colorbox/jquery.colorbox-min.js"></script>
+<script type="text/javascript">
+    var CaptchaCallback = function() {
+        grecaptcha.render('RecaptchaField1', {'sitekey' : '6Le9-ScTAAAAAMJBbf8mVgi-8EBFX0A_QF4ZYtX1'});
+        grecaptcha.render('RecaptchaField2', {'sitekey' : '6Le9-ScTAAAAAMJBbf8mVgi-8EBFX0A_QF4ZYtX1'});
+    };
+</script>
+<script src="https://www.google.com/recaptcha/api.js?onload=CaptchaCallback&render=explicit" async defer></script>
+</head>
+<body>
+<nav class="ui menu borderless orange item inverted"
+     style="min-height: 30px!important;margin-top: -2px; background-color:#7E0E09;">
+    <div class="right menu" style="height: 30px;text-align: right; right: 0px; position: absolute;">
+        <style>
+            @media  screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+                .navabout { padding-right: 18px!important;}
+            }
+        </style>
+        <a class="ui item navabout" href="#" accesskey="U" style="width: 3rem;">:::</a>
+        <p class="ui item" style="width: 1rem; padding-bottom: 0px;">|</p>
+                        <a class="ui item navabout" onclick=talkopenen() target="_blank" href="http://www.ncl.edu.tw/" style="width: 7.3rem; text-align: right; right: -0.6rem;">NCL Homesite</a>
+                <p class="ui item" style="width: 1rem; padding-bottom: 0px;">|</p>
+        <a class="ui item navabout" href="https://taiwanebook.ncl.edu.tw/en/about" style="width: 6rem; ">
+            About Us
+        </a>
+        <p class="ui item" style="width: 1rem; padding-bottom: 0px;">|</p>
+                        <a class="ui item navabout" onclick=talken() target="_blank" href="http://taiwanebook.ncl.edu.tw/digitcenter/NCLSert_Guide_en.pdf" style="width: 6rem;">User Guide</a>
+                <p class="ui item" style="width: 1rem; padding-bottom: 0px;">|</p>
+        <a class="ui item navabout" href="https://taiwanebook.ncl.edu.tw/en/sitemap" style="width: 6rem; ">
+                                    SITE MAP
+                    </a>
+        <p class="ui item" style="width: 1rem; padding-bottom: 0px;">|</p>
+        <a class="ui item inline" href="#inline_content"
+           style="width: 6rem;">Contact Us</a>
+
+        <div style='display:none'>
+            <div class="ui container" id='inline_content' style='padding:10px; background:#fff; width: 90%'>
+                <form class="ui form" action="https://taiwanebook.ncl.edu.tw/en/send" onsubmit="return checkform()" method="POST">
+                    <h2>Contact Us</h2>
+                                    *：Required
+                    <br/>
+                    <div class="field" style="display:none">
+                        <label>report URL</label>
+
+                        <input class="report" type="text" name="url" id="path" readonly=""
+                               value="https://taiwanebook.ncl.edu.tw/en/book/NCL-9910002285/reader">
+                    </div>
+                    <div class="field">
+                        <label>Name*</label>
+                        <input class="report" type="text" name="name" id="name" placeholder="">
+                    </div>
+                    <div class="field">
+                        <label>phone number*</label>
+                        <input class="report" type="text" name="phonenum" id="phonenum" placeholder="">
+                    </div>
+                    <div class="field">
+                        <label>E-mail*</label>
+                        <input class="report" type="text" name="email" id="email" placeholder="">
+                    </div>
+                    <div class="field">
+                        <label>Please leave the message below*</label>
+                        <textarea class="report" rows="3" name="content" id="content"></textarea>
+                    </div>
+                    <div class="inline field">
+                        <div id="RecaptchaField1"></div>
+                                            </div>
+
+                    <button class="ui button" type="submit">Next</button>
+                    <input type="hidden" name="_token" value="PUUzjR8FG1HYfQUIXZm6qsFNmzCofRNIWUKtGuLa">
+                </form>
+            </div>
+        </div>
+                <p class="ui item" style="width: 1rem; padding-bottom: 0px;">|</p>
+        <a class="ui item" href="https://taiwanebook.ncl.edu.tw/zh-tw/book/NCL-9910002285/reader" style="width: 5rem;">中文</a>
+
+    </div>
+    <script>
+    function talk() {
+    	alert('將下載pdf檔案，請注意');
+    }
+    </script>
+    <script>
+    function talken() {
+      alert('Pay attention,will download pdf file');
+    }
+    </script>
+    <script>
+    function talkopen() {
+      alert('將開啟新分頁，請注意');
+    }
+    </script>
+    <script>
+    function talkopenen() {
+      alert('Pay attention,will oepn page on new web.');
+    }
+    </script>
+    <script>
+    function pdfDownloadError() {
+      alert('不好意思，此電子書未開放下載');
+    }
+    </script>
+
+    <script>
+        function checkform() {
+            var name = document.getElementById("name").value;
+            var phonenum = document.getElementById("phonenum").value;
+            var email = document.getElementById("email").value;
+            var content = document.getElementById("content").value;
+            var email_at = document.getElementById("email").value.indexOf("@");
+            var email_d = document.getElementById("email").value.indexOf(".");
+
+            if (name != "" && phonenum != "" && email != "" && content != "" && email_at!=-1 && email_d != -1) {
+                document.form1.submit();
+            } else {
+                if(name == "" || phonenum == "" || email == "" || content == ""){
+                    alert("請確認全部欄位是否都已填寫完成");
+                    return false;
+                }
+                alert("請確認email格式是否正確");
+                return false;
+            }
+        }
+    </script>
+</nav> <!-- end nav -->
+
+<main class="ui page" style="background-image: url(https://taiwanebook.ncl.edu.tw/style/img/top_head.png);
+        background-position:left top; background-repeat:repeat-x;" >
+    <div class="ui column grid container" style="margin-top: 1rem;
+                                             background-image:url(https://taiwanebook.ncl.edu.tw/style/img/top_book.png);
+                                             background-position:left top; background-repeat:no-repeat; margin-top: -14px;">
+    <a href="https://taiwanebook.ncl.edu.tw/en">
+      <div class="ui five wide computer six wide tablet sixteen wide mobile column">
+                    <img class="ui centered medium image" src="https://taiwanebook.ncl.edu.tw/style/img/logo_big.png" alt="Taiwan e Book SERT">
+                </div>
+    </a>
+    <div class="ui ten wide computer five wide tablet three wide mobile column">
+        <div class="ui column icon aligned input grid" style="top: 2rem;">
+            <div class="ui five wide computer eight wide tablet eight wide mobile column ">
+                <div class="ui search">
+                <input id="iSearchInput" class="search_input prompt" type="text"
+                       placeholder="Search all articles"
+                       style="padding-right: 1em ! important;width: 220px;">　
+                    </div>
+            </div>
+            <div class="ui one wide computer two wide tablet two wide mobile column ">
+                <div class="ui icon buttons">
+                    <button class="ui black basic button focus_border" id="search_btn">
+                        <i class="search icon"></i>
+                    </button>
+                </div>
+            </div>
+			<div class="ui four wide computer six wide tablet six wide mobile column ">
+				<a class="ui black basic button focus_border" href="https://taiwanebook.ncl.edu.tw/en/search">Advanced Search</a>
+			</div>
+        </div>
+    </div>
+</div>
+        
+    <main class="ui container page">
+        <div class="ui column grid">
+            <div class="ui row">
+                <div class="ui three wide computer three wide tablet sixteen wide mobile column">
+                    <a href="#" accesskey="L">:::</a>
+                    <a class="ui labeled icon button focus_border"
+                       href="https://taiwanebook.ncl.edu.tw/en/book/NCL-9910002285">
+
+                        <i class="arrow left icon"></i>
+                        Back
+                    </a>
+                </div>
+                <div class="ui eight wide computer eight wide tablet sixteen wide mobile column"
+                     style="margin-left: -0.5rem; margin-top: 1.3rem">
+                    <div class="ui breadcrumb">
+                        <a href="#" accesskey="C">:::</a>
+                        <a class="section"
+                           href="https://taiwanebook.ncl.edu.tw/en">Home</a>
+                        <i class="right angle icon divider"></i>
+                        <a class="section">Book Details</a>
+                        <i class="right angle icon divider"></i>
+                        <div class="active section">1998工業減廢暨永續發展研討會論文集</div>
+                                                    <h6>
+                                <noscript>Your browser does not support JavaScript,「View eBook」will properly not
+                                    work，please turn on JavaScript in your browser.
+                                </noscript>
+                            </h6>
+                                            </div>
+                </div>
+            </div>
+            <div class="ui row" style="margin-top: -2rem;">
+                <div class="ui sixteen wide column divided grid">
+                    <div class="row">
+                        <div class="ui three wide computer three wide tablet sixteen wide mobile column">
+                            <div class="ui image">
+                                                                <img class="ui image" src="https://taiwanebook.ncl.edu.tw/cover/eyJpdiI6Ik5PYWxqdHNxbG5TUnhNOWYwV2lVQVE9PSIsInZhbHVlIjoiQnErZTVrTW5vZkxoT0Y0TDc2ZWhHXC9uMWxKSVwvVEk2cGRVXC9lcGlnMzhFYz0iLCJtYWMiOiIyZDBmNzNjYzViZGVmZTVkNjc4YzU1NTllN2NlZWZkNWYzODUzOGM3MTMzMGZjZDA4ZDIwMjkwNjc1YmE2MDAwIn0="
+                                     alt="1998工業減廢暨永續發展研討會論文集">
+
+
+                                <h3>
+                                    <a href="https://taiwanebook.ncl.edu.tw/en/book/NCL-9910002285">1998工業減廢暨永續發展研討會論文集</a>
+                                </h3>
+
+                                <p> 經濟部, 行政院環境保護署主辦 ; 財團法人中國技術服務社工業污染防治技術服務團承辦</p>
+
+                                <p>經濟部工業局</p>
+
+                                <p></p>
+
+                                <p><a class="pdfFile" href="/pdfjs_dual/web/viewer.html?file=/ebkFiles/NCL-9910002285/NCL-9910002285F01.PDF "&r2l=\'.false"> 1998工業減廢暨永續發展研討會論文集  Part1</a></p><p><a class="pdfFile" href="/pdfjs_dual/web/viewer.html?file=/ebkFiles/NCL-9910002285/NCL-9910002285F02.PDF "&r2l=\'.false"> 1998工業減廢暨永續發展研討會論文集  Part2</a></p>
+                                
+                                
+                            </div>
+
+                            <script>
+                                $(document).ready(function () {
+                                    $(".pdfFile").click(function () {
+                                        event.preventDefault();
+
+                                        console.log($(this).attr('href'));
+
+                                        $("#pdfViewer").attr('src', $(this).attr('href'));
+                                    });
+                                });
+                            </script>
+                        </div>
+                        <div class="ui thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+                            <div class="pdf-loading-container" style="display: none">
+                                <img src="/style/img/loading-icon.gif" alt="pdf loading gif">PDF讀取中，請稍候
+                            </div>
+                            <iframe id="pdfViewer" class="" title="1998工業減廢暨永續發展研討會論文集" src="/pdfjs_dual/web/viewer.html?file=/ebkFiles/NCL-9910002285/NCL-9910002285F01.PDF&amp;r2l=false"
+                                    allowfullscreen width="100%" height="800px" frameBorder="0" scrolling="no">
+                                Browser not compatible.
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</main>
+
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+  ga('create', 'UA-71788687-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<div class="ui footer" style="text-align:center; background-color:#FFECC9;background-repeat:repeat-x;">
+    <div class="ui three column doubling stackable grid container">
+        <div class="ui one wide computer sixteen wide tablet sixteen wide mobile column">
+            <a href="#" accesskey="Z">:::</a>
+        </div>
+        <div class="ui four wide computer sixteen wide tablet sixteen wide mobile column">
+                            <img class="ui medium image " src="https://taiwanebook.ncl.edu.tw/style/img/logo_ncl.png" style=""
+                     alt="National Central Library">
+                    </div>
+        <div class="ui eight wide computer sixteen wide tablet sixteen wide mobile column" style="">
+                            <p style="font-weight: 700; ">
+                                        National Central Library ©2016, All Rights Reserved<br>
+                    Best resolutions:　1024x768+ | Web browser: Chrome, Firefox, IE11+
+
+                </p>
+                    </div>
+        <div class="ui three wide computer sixteen wide tablet sixteen wide mobile column">
+                            <span style="font-weight: 700;">   Visits  : 6,333,944</span>
+                    </div>
+    </div>
+
+    <div class="ui container column grid" style="padding-top: 1rem; padding-bottom: 1rem; display: none;">
+        <div class="ui row">
+            <div class="ui three wide computer sixteen wide tablet sixteen wide mobile doubling stackable grid">
+                                    <img class="ui medium image " src="https://taiwanebook.ncl.edu.tw/style/img/logo_ncl.png"
+                         style="top: 1.5rem; height: 100%!important;" alt="National Central Library">
+                
+            </div>
+
+            <div class="ui nine wide computer eleven wide tablet sixteen wide mobile doubling stackable grid" style="">
+                                    <p style="font-weight: 700; margin-left: 20px;">
+                                                National Central Library ©2016, All Rights Reserved<br>
+                        Best resolutions:　1024x768+ | Web browser: Chrome, Firefox, IE11+
+
+                    </p>
+                            </div>
+            <div class="ui four wide computer five wide tablet sixteen wide mobile doubling stackable grid">
+            <!--
+                <img class="ui image bottom aligned" src="https://taiwanebook.ncl.edu.tw/style/img/aplus.gif" >
+                -->
+                                    <span style="font-weight: 700;">   Visits  : 6,333,944</span>
+                            </div>
+        </div>
+    </div>
+</div>
+<script src="https://taiwanebook.ncl.edu.tw/js/jquery-1.11.3.min.js"></script>
+<script src="https://taiwanebook.ncl.edu.tw/semantic/dist/semantic.min.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" href="https://taiwanebook.ncl.edu.tw/style/colorbox/colorbox.css"/>
+<script src="https://taiwanebook.ncl.edu.tw/style/colorbox/jquery.colorbox-min.js"></script>
+<script src="https://taiwanebook.ncl.edu.tw/style/main.js"></script>
+<script src="https://taiwanebook.ncl.edu.tw/pdfjs_dual/build/pdf.js"></script>
+<script>
+
+    $("#search_btn").click(function () {
+        var search_terms = $("input.search_input").val();
+        if (search_terms.length != 0) {
+            search_terms = encodeURIComponent(search_terms);
+            window.location.href = 'https://taiwanebook.ncl.edu.tw/en/search/' + search_terms +'/all';
+        }
+    });
+
+    $('#iSearchInput').keypress(function(event){
+        var keycode = (event.keyCode ? event.keyCode : event.which);
+        if(keycode == '13'){
+            var search_terms = $("input.search_input").val();
+            if (search_terms.length != 0) {
+                search_terms = encodeURIComponent(search_terms);
+                window.location.href = 'https://taiwanebook.ncl.edu.tw/en/search/' + search_terms +'/all';
+            }
+        }
+    });
+</script>
+    <script>
+        var loading = $(".pdf-loading-container");
+        var pdfViewer = $('#pdfViewer');
+        pdfViewer.load(function () {
+            loading.show();
+            pdfViewer.css('opacity', .5);
+            document.getElementById('pdfViewer').contentWindow.document.addEventListener('pagesloaded', function (e) {
+                loading.hide();
+                pdfViewer.css('opacity', 1);
+            }, true);
+        });
+    </script>
+</body>
+</html>
