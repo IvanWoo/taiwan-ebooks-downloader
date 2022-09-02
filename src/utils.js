@@ -39,6 +39,7 @@ export const getDownloadBtn = (pdfUrl, label) => {
   let downloadBtn = document.createElement("A");
   downloadBtn.target = "_blank";
   downloadBtn.href = pdfUrl;
+  downloadBtn.id = pdfUrl;
   downloadBtn.textContent = `${label} ${pdfUrl.split("/").slice(-1)}`;
   return downloadBtn;
 };

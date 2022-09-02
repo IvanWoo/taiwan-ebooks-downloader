@@ -11,13 +11,16 @@
     "prep": "yarn clean && mkdir -p chrome/js",
     "build": "yarn prep && parcel build src/inject.js -d chrome/js --no-source-maps --no-cache --detailed-report && bash build.sh",
     "start": "yarn prep && parcel src/inject.js -d chrome/js",
-    "test": "jest",
-    "test:dl": "./scripts/dl-html-mock.sh"
+    "test": "yarn test:ut && yarn test:e2e",
+    "test:ut": "jest src",
+    "test:dl": "./scripts/dl-html-mock.sh",
+    "test:e2e": "yarn build && playwright test --browser=chromium --workers 6"
   },
   "browserslist": [
     "last 1 Chrome version"
   ],
   "devDependencies": {
+    "@playwright/test": "^1.25.1",
     "@testing-library/dom": "^8.17.1",
     "@testing-library/jest-dom": "^5.16.5",
     "babel-jest": "^29.0.1",

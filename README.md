@@ -22,6 +22,24 @@ yarn start
 yarn build
 ```
 
+## Test
+
+```sh
+yarn test
+```
+
+### unit test
+
+```sh
+yarn test:ut
+```
+
+### end to end test
+
+```sh
+yarn test:e2e
+```
+
 ## Acknowledgments
 
 - Inspired by [huangziwei](https://github.com/huangziwei/tweb).
