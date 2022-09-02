@@ -12,7 +12,10 @@
     "build": "yarn prep && parcel build src/inject.js -d chrome/js --no-source-maps --no-cache --detailed-report && bash build.sh",
     "start": "yarn prep && parcel src/inject.js -d chrome/js",
     "test": "jest",
-    "test:dl": "./scripts/dl-html-mock.sh"
+    "test:dl": "./scripts/dl-html-mock.sh",
+    "test:e2e": "yarn build && yarn cypress:run:chrome",
+    "cypress:open": "cypress open",
+    "cypress:run:chrome": "cypress run -b chrome --headed"
   },
   "browserslist": [
     "last 1 Chrome version"
@@ -21,6 +24,7 @@
     "@testing-library/dom": "^8.17.1",
     "@testing-library/jest-dom": "^5.16.5",
     "babel-jest": "^29.0.1",
+    "cypress": "^10.7.0",
     "jest": "^29.0.1",
     "jest-environment-jsdom": "^29.0.1",
     "jest-fetch-mock": "^3.0.3",
