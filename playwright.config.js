@@ -6,6 +6,7 @@ const config = {
     video: "on-first-retry",
   },
   testDir: "playwright",
+  workers: 6,
 };
 
 module.exports = config;
