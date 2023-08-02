@@ -1,7 +1,7 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Taiwan eBooks Downloader",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "default_locale": "en",
   "description": "Download eBooks directly from Taiwan eBook Database (台湾华文电子书库)",
   "icons": {
@@ -11,7 +11,7 @@
     "128": "images/logo128.png"
   },
   "author": "Yifan Wu",
-  "browser_action": {
+  "action": {
     "default_title": "Taiwan eBooks Downloader"
   },
   "content_scripts": [
@@ -29,14 +29,21 @@
     }
   ],
   "background": {
-    "scripts": [
-      "background.js"
-    ],
-    "persistent": true
+    "service_worker": "background.js"
   },
   "permissions": [
-    "webRequest",
-    "webRequestBlocking",
+    "declarativeNetRequest"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "host_permissions": [
     "https://taiwanebook.ncl.edu.tw/ebkFiles/*"
   ]
 }

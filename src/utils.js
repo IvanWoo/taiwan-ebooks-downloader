@@ -6,7 +6,7 @@ const getContent = async (url) => {
 
 const getDefaultPdfUrl = (url) => {
   const id = url.split("/")[5];
-  return `http://taiwanebook.ncl.edu.tw/ebkFiles/${id}/${id}.PDF`;
+  return `https://taiwanebook.ncl.edu.tw/ebkFiles/${id}/${id}.PDF`;
 };
 
 export const getPdfHrefs = async (url) => {

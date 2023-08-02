@@ -89,7 +89,7 @@ test.describe("inject multiple parts", () => {
 
 test.describe("inject single part", () => {
   const p1 =
-    "http://taiwanebook.ncl.edu.tw/ebkFiles/NCL-001542808/NCL-001542808.PDF";
+    "https://taiwanebook.ncl.edu.tw/ebkFiles/NCL-001542808/NCL-001542808.PDF";
 
   test("onBookPage", async ({ page }) => {
     await page.goto("https://taiwanebook.ncl.edu.tw/zh-tw/book/NCL-001542808");
