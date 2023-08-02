@@ -8,6 +8,10 @@ All notable changes to this project will be documented in this file.
 
 - migrate to manifest v3
 
+### Bug Fixes
+
+- no more http links
+
 # 0.5.0
 
 ### Feature
