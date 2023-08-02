@@ -49,7 +49,7 @@ describe("getPdfUrls", () => {
     [
       "NTUL-9900013103",
       [
-        "http://taiwanebook.ncl.edu.tw/ebkFiles/NTUL-9900013103/NTUL-9900013103.PDF",
+        "https://taiwanebook.ncl.edu.tw/ebkFiles/NTUL-9900013103/NTUL-9900013103.PDF",
       ],
     ],
   ];
