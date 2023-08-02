@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+# 0.6.0
+
+### Refactor
+
+- migrate to manifest v3
+
 # 0.5.0
 
 ### Feature
