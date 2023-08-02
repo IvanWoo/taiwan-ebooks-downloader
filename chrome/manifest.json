@@ -32,9 +32,7 @@
     "service_worker": "background.js"
   },
   "permissions": [
-    "declarativeNetRequest",
-    "declarativeNetRequestFeedback",
-    "declarativeNetRequestWithHostAccess"
+    "declarativeNetRequest"
   ],
   "declarative_net_request": {
     "rule_resources": [
