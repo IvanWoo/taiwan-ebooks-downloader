@@ -7,3 +7,4 @@ node_modules/
 .DS_Store
 
 chrome.zip
+chrome/_metadata/generated_indexed_rulesets
